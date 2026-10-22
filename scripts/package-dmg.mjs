@@ -9,8 +9,10 @@ const app=join(root,'release/秦彻陪伴-darwin-arm64/秦彻陪伴.app');
 const stage=join(root,'release/dmg-stage');
 await rm(stage,{recursive:true,force:true});await mkdir(stage,{recursive:true});
 execFileSync('ditto',[app,join(stage,'秦彻陪伴.app')],{stdio:'inherit'});
-// Local ad-hoc signature maintains bundle integrity; this is NOT Developer ID or notarization.
-execFileSync('codesign',['--force','--deep','--sign','-',join(stage,'秦彻陪伴.app')],{stdio:'inherit'});
+// Preserve Developer ID signatures when explicitly building for notarization.
+if (!process.env.QINCHE_DEVELOPER_ID_SIGNED) {
+  execFileSync('codesign',['--force','--deep','--sign','-',join(stage,'秦彻陪伴.app')],{stdio:'inherit'});
+}
 execFileSync('codesign',['--verify','--deep','--strict',join(stage,'秦彻陪伴.app')],{stdio:'inherit'});
 await symlink('/Applications',join(stage,'Applications'));
 await copyFile(join(root,'INSTALL.md'),join(stage,'安装说明.md'));

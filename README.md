@@ -13,7 +13,7 @@
 
 Mac 拖入「应用程序」安装；Windows 完整解压后运行 `QincheCompanion.exe`。无需开发环境、API Key 或联网。Intel Mac 暂无安装包。
 
-**发布状态：** Mac 未做 Developer ID 签名及 Apple 公证；Windows 未做发布者签名，且尚未完成 Windows 实机验收。首次启动可能触发系统验证提示，详见安装说明。DMG 是安装容器，不等于已获 Apple 验证。
+**发布状态：** Mac 包已使用 Developer ID 签名、通过 Apple 公证并附加票据，Gatekeeper 检查通过。Windows 仍未做发布者签名，且尚未完成 Windows 实机验收。旧版 Mac 用户请重新下载当前 DMG。
 
 ## 陪伴内容
 
@@ -57,3 +57,10 @@ npm start
 ## 素材与许可
 
 详见 [素材来源与权利说明](ASSETS.md)。角色与官方素材属于各自权利人，AI 辅助定制图片不改变角色权利归属。源码公开可查看，目前未授予额外开源许可（UNLICENSED）。请勿将本项目误认为官方产品。
+
+
+### Mac 签名与公证（维护者）
+
+`QINCHE_SIGN_IDENTITY` 指定钥匙串中的 Developer ID Application 身份，运行 `node scripts/sign-mac.mjs`。脚本仅签署 Mach-O 代码与应用/框架，不单独签署图片、语言资源或 ASAR。私钥和公证密码不得放入仓库。
+
+通过 `notarytool` 使用本机钥匙串配置提交应用 ZIP，只有状态为 Accepted 后才执行 `xcrun stapler staple` / `validate` 和 `spctl --assess --type execute`。最后设置 `QINCHE_DEVELOPER_ID_SIGNED=1 npm run package:dmg`，保留已有签名与票据；未设置时构建的是仅 ad-hoc 签名的开发包，不能宣称公证通过。

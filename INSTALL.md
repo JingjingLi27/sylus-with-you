@@ -9,10 +9,10 @@
 1. 下载 `Sylus-with-You-0.3.1-macOS-Apple-Silicon.dmg`。
 2. 双击 DMG，将「秦彻陪伴.app」拖到 Applications（应用程序）。
 3. 弹出磁盘映像，从「应用程序」打开秦彻陪伴。
-4. 本版没有 Developer ID 签名和 Apple 公证。如果提示无法验证开发者，只有在你确认下载自本仓库并愿意信任此版本后，才到「系统设置 → 隐私与安全性」找到本应用，选择「仍要打开」并按系统提示确认。详情见 [Apple 官方说明](https://support.apple.com/102445)。不要关闭整个系统的安全保护。
-5. 如果提示「已损坏」或其他错误，请记录完整提示并提交 Issue；DMG 不能保证消除所有 Gatekeeper 提示。
+4. 当前 Mac 下载包已使用 Developer ID 签名并通过 Apple 公证。首次打开仍可能显示普通的「从互联网下载」确认，确认应用名称后选择打开即可。
+5. 若之前下载过未公证版本，请退出旧版，重新下载本页 DMG 并替换应用。如仍提示「已损坏」或「无法验证开发者」，请记录完整提示并提交 Issue，不要关闭系统安全保护。
 
-此包仅含 arm64；不适用于 Intel Mac。本版含本地 ad-hoc 完整性签名，不等于 Apple 身份验证或公证。
+此包仅含 arm64；不适用于 Intel Mac。2026-10-22 已完成公证票据附加，并通过 macOS Gatekeeper 检查（Notarized Developer ID）。
 
 ## Windows（Windows 10/11，Intel / AMD 64 位）
 

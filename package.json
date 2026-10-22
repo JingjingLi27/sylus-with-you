@@ -14,7 +14,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "start": "node scripts/build.mjs && electron .",
-    "package": "node scripts/build.mjs && electron-packager . 秦彻陪伴 --icon=assets/icons/schedule-round.icns --platform=darwin --arch=arm64 --out=release --overwrite --asar --ignore=\"^/src\" --ignore=\"^/tests\" --ignore=\"^/scripts\" --ignore=\"^/release\" --ignore=\"^/output\" --ignore=\"^/\\.playwright-cli\"",
+    "package": "node scripts/build.mjs && electron-packager . 秦彻陪伴 --icon=assets/icons/schedule-round.icns --app-bundle-id=com.jingjingli.syluswithyou --platform=darwin --arch=arm64 --out=release --overwrite --asar --ignore=\"^/src\" --ignore=\"^/tests\" --ignore=\"^/scripts\" --ignore=\"^/release\" --ignore=\"^/output\" --ignore=\"^/\\.playwright-cli\"",
     "package:windows": "node scripts/package-windows.mjs",
     "package:dmg": "node scripts/package-dmg.mjs"
   },
