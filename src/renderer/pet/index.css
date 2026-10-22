@@ -1,0 +1,22 @@
+/* 角色窗：完全透明背景，画布填满窗口。不使用系统拖动区（-webkit-app-region）。 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  /* 不设置整窗拖动区；拖动由手势处理器按命中区域实现。 */
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#pet-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* 画布像素缓冲为固定运行尺寸，由 CSS 缩放到窗口 DIP 尺寸。 */
+  image-rendering: auto;
+}

@@ -1,0 +1,34 @@
+/* 气泡窗：透明背景，深红/暖白克制视觉，淡入淡出。不接收鼠标。 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+#bubble {
+  box-sizing: border-box;
+  margin: 8px;
+  padding: 10px 14px;
+  max-width: 232px;
+  background: rgba(122, 31, 43, 0.95); /* 深红 */
+  color: #f6ece2; /* 暖白 */
+  font: 13px/1.5 -apple-system, "PingFang SC", sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  word-break: break-word;
+}
+
+#bubble.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

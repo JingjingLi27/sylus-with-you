@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline';"
+    />
+    <title>秦彻陪伴 · 设置</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header id="status-bar">
+      <div class="status-main">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">加载中…</span>
+      </div>
+      <div class="status-actions">
+        <span id="preview-badge" role="status" aria-live="polite"></span>
+        <button id="back-to-now" type="button" disabled>回到现在</button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>今天的作息</h2>
+        <p class="section-hint">点任意时段可在桌面上预览该状态；预览不会修改真实时间。预览时可以点击桌面角色，检查互动反应；回家时段点击仅显示文字。</p>
+        <div id="schedule-list" class="schedule-list"></div>
+        <p class="section-hint">回家收尾预览：<button type="button" data-preview-minute="658">10:58 送花 13</button> <button type="button" data-preview-minute="659">10:59 互动 03</button></p>
+      </section>
+
+      <section>
+        <h2>显示</h2>
+        <div class="pref-row">
+          <label for="pref-height">角色大小</label>
+          <input id="pref-height" type="range" step="8" />
+          <span id="pref-height-value" class="pref-value"></span>
+        </div>
+        <div class="pref-row">
+          <label for="pref-ontop">始终置顶</label>
+          <input id="pref-ontop" type="checkbox" />
+        </div>
+        <div class="pref-row">
+          <label for="pref-reduced">减少动态效果</label>
+          <input id="pref-reduced" type="checkbox" />
+        </div>
+        <div class="pref-row">
+          <label for="pref-hidden">隐藏秦彻</label>
+          <input id="pref-hidden" type="checkbox" />
+        </div>
+      </section>
+
+
+    </main>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

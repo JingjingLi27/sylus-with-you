@@ -1,0 +1,38 @@
+{
+  "name": "qinche-companion",
+  "productName": "秦彻陪伴",
+  "version": "0.3.1",
+  "description": "本地运行的桌面 Q 版秦彻桌宠，按九段作息自动切换活动。",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "dist/main/index.js",
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node scripts/build.mjs && electron .",
+    "package": "node scripts/build.mjs && electron-packager . 秦彻陪伴 --icon=assets/icons/schedule-round.icns --platform=darwin --arch=arm64 --out=release --overwrite --asar --ignore=\"^/src\" --ignore=\"^/tests\" --ignore=\"^/scripts\" --ignore=\"^/release\" --ignore=\"^/output\" --ignore=\"^/\\.playwright-cli\"",
+    "package:windows": "node scripts/package-windows.mjs",
+    "package:dmg": "node scripts/package-dmg.mjs"
+  },
+  "dependencies": {
+    "gifuct-js": "2.1.2"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "@types/node": "24.19.1",
+    "electron": "44.5.1",
+    "esbuild": "0.28.2",
+    "typescript": "5.7.2",
+    "vite": "8.3.3",
+    "vitest": "5.0.3"
+  },
+  "homepage": "https://github.com/JingjingLi27/sylus-with-you",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JingjingLi27/sylus-with-you.git"
+  }
+}

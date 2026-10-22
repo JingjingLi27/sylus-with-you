@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "slots": [
+    {
+      "activityId": "lunch",
+      "label": "午餐",
+      "statusText": "正在吃午餐",
+      "startMinute": 0,
+      "endMinute": 120,
+      "visualId": "a21"
+    },
+    {
+      "activityId": "unknown",
+      "label": "？",
+      "statusText": "？",
+      "startMinute": 120,
+      "endMinute": 270,
+      "visualId": "a05"
+    },
+    {
+      "activityId": "home",
+      "label": "回家",
+      "statusText": "回家了",
+      "startMinute": 270,
+      "endMinute": 660,
+      "visualId": "a16"
+    },
+    {
+      "activityId": "sleep",
+      "label": "睡觉",
+      "statusText": "正在睡觉",
+      "startMinute": 660,
+      "endMinute": 1030,
+      "visualId": "a23"
+    },
+    {
+      "activityId": "wake",
+      "label": "起床",
+      "statusText": "刚刚起床",
+      "startMinute": 1030,
+      "endMinute": 1040,
+      "visualId": "a19"
+    },
+    {
+      "activityId": "breakfast",
+      "label": "早餐",
+      "statusText": "正在吃早餐",
+      "startMinute": 1040,
+      "endMinute": 1200,
+      "visualId": "a22"
+    },
+    {
+      "activityId": "music",
+      "label": "听古典乐",
+      "statusText": "正在听古典乐",
+      "startMinute": 1200,
+      "endMinute": 1260,
+      "visualId": "a01"
+    },
+    {
+      "activityId": "boxing",
+      "label": "拳击训练",
+      "statusText": "正在练拳",
+      "startMinute": 1260,
+      "endMinute": 1380,
+      "visualId": "a24"
+    },
+    {
+      "activityId": "wash",
+      "label": "冲澡换衣服",
+      "statusText": "正在冲澡换衣服",
+      "startMinute": 1380,
+      "endMinute": 1440,
+      "visualId": "a25"
+    }
+  ]
+}
